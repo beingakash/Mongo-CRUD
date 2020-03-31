@@ -20,35 +20,43 @@ MongoClient.connect(connectionURL,{useNewUrlParser:true},(error,client)=>{
 
     const db=client.db(databaseName)
 
-    // db.collection('users').insertOne({
-    //     name:'Akash Kumar',
-    //     age:23
-    // },(error,result)=>{
-    //     if(error){
-    //         return console.log('Unable to insert User')
-    //     }
+    db.collection('users').insertOne({
+        name:'A Kumar',
+        age:22
+    },(error,result)=>{
+        if(error){
+            return console.log('Unable to insert User')
+        }
         
-    //     console.log(result.ops)
-    //    })
+        console.log(result.ops)
+    })
+    
 
 
-    db.collection('users').insertMany([
+    db.collection('tasks').insertMany([
         {
-            name:'Kumar',
-            age:12
+            prodName:'Full Cream Milk',
+            quantity:1,
+            Status:true
+
         },
         {
-            name :'Ram Dev',
-            age:23
-        },(error,result)=>{
-
+            prodName:'Lifeboy-Soap',
+            quantity:1,
+            Status:false
+        }],(error,result)=>{
             if(error)
             {
-                return console.log('')
+                return console.log('Some error')
             }
 
-        }
-    ])
+            console.log(result.ops)
+           console.log(result.insertedCount)
+        }     
+
+    )
+
+    
 })
 
 
