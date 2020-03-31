@@ -38,7 +38,7 @@ MongoClient.connect(connectionURL,{useNewUrlParser:true},(error,client)=>{
             age:12
         },
         {
-            name :'Ram',
+            name :'Ram Dev',
             age:23
         },(error,result)=>{
 
