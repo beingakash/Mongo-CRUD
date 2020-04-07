@@ -10,13 +10,13 @@ app.listen(port, () => {
 const bcrypt=require('bcryptjs')
 
 const myFun=async()=>{
-    const password='RED1234'
+    const password='RED12345'
     const hashed= await bcrypt.hash(password,8)
 
     console.log(password)
     console.log(hashed)
 
-    const isMatch=await bcrypt.compare('RED1234',hashed)
+    const isMatch=await bcrypt.compare('RED12345',hashed)
     console.log(isMatch)
 }
 
